@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+input {
+    border-radius: 6px;
+    border-width: 1px;
+    height: 20px;
+}
+  .logo img {
+    width: 50%;
+  }
+.body {
+    background-image: url(https://duhocnhatbanuytin.net/images/eva/Furano.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+/*    display: none; /* test */
+}
+.title {
+    text-align: center;
+    font-size: 25px;
+    color: #777777;
+    margin-top: 18%;
+}
+.container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 18%;
+
+}
+.btn {
+    width: 80%;
+    color: white;
+    background-color: crimson;
+    border-width: 5px;
+    border-color: chocolate;
+    margin: 10px 0px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 22px;
+}
+/* information */
+.infopage {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.infotable{
+    padding: 0px 10px;
+}
+.info-title {
+    color: #777777;
+    text-align: center;
+}
+.red {
+    color: red;
+}
+
+/* radio giới tính */
+#male {
+    margin:5px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+#male label {
+    float:left;
+    width:90px;
+    margin:4px;
+    background-color:#0066FF;
+    border-radius:6px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+       
+}
+
+#male label span {
+    text-align: center;
+    font-size: 16px;
+    padding: 0px 0px;
+    display: block;
+}
+
+#male label input {
+    position:absolute;
+    top:-20px;
+}
+
+#male input:checked + span {
+    background-color:#6699CC;
+    color:#F7F7F7;
+}
+.blue {
+    background-color: #0066FF;
+    color: white;
+}
+/* btn */
+.btn-sub {
+    margin: 20px 0px;
+    width: 90px;
+    height: 28px;
+    border-width: 0px;
+    background-color: darkgrey;
+}
+.back {
+
+}
+.Submit {
+    float: right;
+}
+
+/* レンタル　tab */
+.rent-body {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.margin-top {
+    margin-top: 30px;
+}
+.margin-bottom {
+    margin-bottom: 30px;
+}
+.rent-tip {
+    text-align: center;
+    
+}
+/* レンタル　btn */
+.rent-container {
+    text-align: center;
+}
+.btn-container {
+    margin:5px 0px;
+    display: inline-grid;
+    width: 90%;
+}
+
+.btn-container label {
+    margin: 10px 0px;
+    background-color:#0066FF;
+    border-radius:6px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+       
+}
+
+.btn-container label span {
+    text-align: center;
+    font-size: 20px;
+    padding: 16px 0px;
+    display: block;
+}
+
+.btn-container label input {
+    position:absolute;
+    top:-20px;
+}
+
+.btn-container input:checked + span {
+    background-color:#6699CC;
+    color:#F7F7F7;
+}
+.rent-fooder {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    text-align: center;
+}
+/* qrshow tab */
+.qrshow-body {
+    display: none; 
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.qrshow-container {
+    margin:5px 15px;
+}
+.qr-Submit {
+}
+/* end qrshow tab */

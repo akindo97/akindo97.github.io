@@ -11,6 +11,7 @@
     <script src="javascript/search.js"></script>
     <!-- custom css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/choose.css">
     <title>レンタル事前登録</title>
 </head>
 <body>
@@ -41,28 +42,28 @@
                 <td colspan="4" class="note">お名前</td>
             </tr>
             <tr>
-                <td style="width: 15%;" class="none red">性：</td>
+                <td style="width: 15%;" class=" red">性：</td>
                 <td style="width: 35%;"><input style="width: 80%;" name="firstname" type="text" /></td>
-                <td style="width: 15%;" class="none red">名：</td>
+                <td style="width: 15%;" class=" red">名：</td>
                 <td style="width: 35%;"><input style="width: 80%;" name="lastname" type="text" /></td>
                 </tr>
             <tr>
                 <td colspan="4" class="note">フリガナ</td>
             </tr>
             <tr>
-                <td style="width: 15%;" class="none red">セイ：</td>
+                <td style="width: 15%;" class=" red">セイ：</td>
                 <td style="width: 35%;"><input style="width: 80%;" name="firstname_sei" type="text" /></td>
-                <td style="width: 15%;" class="none red">メイ：</td>
+                <td style="width: 15%;" class=" red">メイ：</td>
                 <td style="width: 35%;"><input style="width: 80%;" name="lastname_mei" type="text" /></td>
             </tr>
             <tr>
-                <td colspan="1">年齢</td>
-                <td colspan="3"><select name="age">
-                    
+                <td colspan="1" class="note">年齢</td>
+                <td colspan="3"><select name="age" style="width: 55px; margin-top: 12px;">
+
                  </select></td>
             </tr>
             <tr>
-                <td colspan="4">性別</td>
+                <td colspan="4" class="note">性別</td>
             </tr>
             <tr>
                 <td colspan="4">
@@ -77,20 +78,20 @@
                 <td colspan="4>"><hr></td> <!--line-->
             </tr>
             <tr>
-                <td colspan="1" class="red">身長</td>
-                <td colspan="3" style="text-align: center;"><input style="width: 35%;" name="height" placeholder="160.5" type="number" /></td>
+                <td colspan="2" class="red note">身長</td>
+                <td colspan="2"><input style="width: 55%; text-align: center;" name="height" placeholder="160.5" type="number" /></td>
             </tr>
             <tr>
-                <td colspan="1" class="red">体重</td>
-                <td colspan="3" style="text-align: center;"><input style="width: 35%;" name="weight" placeholder="43.5" type="number" /></td>
+                <td colspan="2" class="red note">体重</td>
+                <td colspan="2"><input style="width: 55%; text-align: center;" name="weight" placeholder="43.5" type="number" /></td>
             </tr>
             <tr>
-                <td colspan="1" class="red">靴のサイズ</td>
-                <td colspan="3" style="text-align: center;"><input style="width: 35%;" name="size" placeholder="23.5" type="number" /></td>
+                <td colspan="2" class="red note">靴のサイズ</td>
+                <td colspan="2"><input style="width: 55%; text-align: center;" name="size" placeholder="23.5" type="number" /></td>
             </tr>
             <tr>
-                <td colspan="1">スタンス</td>
-                <td colspan="3">
+                <td colspan="2" class="note">スタンス</td>
+                <td colspan="2">
                     <div id="male">
                         <label class="blue"><input id="select" type="radio" name="stance" value="レギュラー"><span>レギュラー</span></label>
                         <label class="blue"><input id="male" type="radio" name="stance" value="グーフィー"><span>グーフィー</span></label>
@@ -101,10 +102,10 @@
                 <td colspan="4>"><hr></td> <!--line-->
             </tr>
             <tr>
-                <td colspan="4">住所</td>
+                <td colspan="4" class="note">住所</td>
             </tr>
             <tr>
-                <td colspan="4"><span  class="red">郵便番号　</span><span>(例：1234567)</span></td>
+                <td colspan="4"><span  class="red note">郵便番号　</span><span>(例：1234567)</span></td>
             </tr>
                 <td colspan="2">
                     <input type="text" name="zip_code" style="width:90%" id="zip_code">
@@ -115,34 +116,34 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4" class="red">都道府県</td>
+                <td colspan="4" class="red note">都道府県</td>
             </tr>
             <tr>
                 <td colspan="4"><input type="text"  name="address1" style="width:45%" id="address1"></td>
             </tr>
             <tr>
-                <td colspan="4" class="red">市区町村</td>
+                <td colspan="4" class="red note">市区町村</td>
             </tr>
             <tr>
                 <td colspan="4"><input type="text" class="address2" name="address2" style="width:80%" id="address2"></td>
             </tr>
             <tr>
-                <td colspan="4" class="red">その他</td>
+                <td colspan="4" class="red note">その他</td>
             </tr>
             <tr>
                 <td colspan="4"><input type="text" name="address3" style="width:80%" id="address3"></td>
             </tr>
             <tr>
-                <td colspan="4" class="red">番地</td>
+                <td colspan="4" class="red note">番地</td>
             </tr>
             <tr>
-                <td colspan="4"><input type="text" name="address4" style="width:80%"></td>
+                <td colspan="4"><input type="text" name="address4" style="width:80%; margin-bottom: 12px;"></td>
             </tr>
             <tr>
-                <td colspan="4"><span  class="red">連絡先　</span><span>(例：01234567890)</span></td>
+                <td colspan="4"><span  class="red note">連絡先　</span><span>(例：01234567890)</span></td>
             </tr>
             <tr>
-                <td colspan="4"><input type="number" name="phonenumber" style="width:80%"></td>
+                <td colspan="4"><input type="tel" name="phonenumber" style="width:80%"  maxlength="12"></td>
             </tr>
                   
                
@@ -181,43 +182,165 @@
     </div>
 </div>
     <!--end rent tab-->
-    <!--qrshow tab-->
-<div class="qrshow-body">
+    <!--choose rental tab-->
+<div class="choosebody" id="choosebody">
     <div class="logo"><img src="assets/image/logo.png"></div>
     <div class="info-title">レンタル事前登録</div>
-    <div class="qrshow-container">
-        <div class="qrshow-QR">とりあえず、ユーザーが入力した情報のみが表示されます。</div><hr><br>
-        <span>割引券: </span><span class="qrdiscount"></span><br>
-        <span>名前: </span><span id="firstname"></span><span> </span><span id="lastname"></span><br>
-        <span>フリガナ: </span><span id="firstname_sei"></span><span> </span><span id="lastname_mei"></span><br>
-        <span>年齢: </span><span id="age"></span><br>
-        <span>性別: </span><span id="male"></span><br>
-        <span>身長: </span><span id="height"></span><br>
-        <span>体重: </span><span id="weight"></span><br>
-        <span>靴のサイズ: </span><span id="size"></span><br>
-        <span>スタンス: </span><span id="stance"></span><br>
-        <span>郵便番号: </span><span id="zip_codeshow"></span><br>
-        <span>都道府県: </span><span id="address_1"></span><br>
-        <span>市区町村: </span><span id="address_2"></span><br>
-        <span>その他の住所: </span><span id="address_3"></span><br>
-        
-        
-        <div class="rent-fooder">
-            <table style="width: 100%;">
-                <tr>
-                    <td colspan="1"><input name="qr-back" class="btn-sub qr-back" type="button" value="戻る" /></td>
-                    <td colspan="1"><input name="qr-Submit" class="btn-sub qr-Submit" type="button" value="Top" /></td>
-                </tr>
-            </table>
+    <div class="choose-table">
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 100%;" class="note">レンタル品選択</td>
+        </tr >
+        <tr id="area-1">
+            <td style="width: 33.3%;">利用区分</td>
+            <td style="width: 33.3%;"><label class="blue"><input id="select" type="radio" name="area-1" value="大人"><span>大人</span></label></td>
+            <td style="width: 33.3%;"><label class="blue"><input id="select" type="radio" name="area-1" value="子供"><span>子供</span></label></td>
+        </tr>
+        <tr>
+            <td style="width: 100%;" class="small-note">小学生以下は子供を選択してください</td>
+        </tr>
+        <tr id="area-2">
+            <td style="width: 33.3%;">利用区分</td>
+            <td style="width: 33.3%;"><label class="blue"><input id="select" type="radio" name="area-2" value="１日"><span>１日</span></label></td>
+            <td style="width: 33.3%;"><label class="blue"><input id="select" type="radio" name="area-2" value="２日"><span>２日</span></label></td>
+        </tr>
+        <tr><td style="width: 100%;"><hr></td></tr> <!--line-->
+        <tr>
+            <td style="width: 100%;" class="note">フルセット</td>
+        </tr>
+        <tr id="set-1">
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-1" value="スキーセット＋ウェア上下,¥7,300">
+                <div class="set-title"><font size="2px">スキーセット＋ウェア上下<br>(板、ブーツ、ストック)</font><br>
+                <font size="5px"><center>¥7,300</center></font></div></label>
+            </td>
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-1" value="ボードセット＋ウェア上下,¥7,300">
+                <div class="set-title"><font size="2px">ボードセット＋ウェア上下<br>(板、ブーツ)<br></font>
+                <font size="5px"><center>¥7,300</center></font></div></label>
+            </td>
+        </tr>
+       <tr>
+            <td style="width: 100%;" class="note">セット</td>
+        </tr>
+        <tr id="set-2">
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-2" value="スキーセット,¥4,200">
+                <div class="set-title"><font size="2px">スキーセット<br>(板、ブーツ、ストック)</font><br>
+                <font size="5px"><center>¥4,200</center></font></div></label>
+            </td>
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-2" value="ボードセット,¥4,200">
+                <div class="set-title"><font size="2px">ボードセット<br>(板、ブーツ)<br></font>
+                <font size="5px"><center>¥4,200</center></font></div></label>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;" class="note">ウエア</td>
+        </tr>
+        <tr id="set-3">
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-3" value="ウエア上下,¥4,200">
+                <div class="set-title"><font size="2px">ウエア上下<br></font><br>
+                <font size="5px"><center>¥4,200</center></font></div></label>
+            </td>
+            <td style="width: 50%;">
+            </td>
+        </tr>
+        <tr id="set-3-2">
+        <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-3" value="ウエア/ジャケット,¥2,600">
+            <div class="set-title"><font size="2px">ウエア/ジャケット<br></font><br>
+            <font size="5px"><center>¥2,600</center></font></div></label>
+            </td>
+        <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-3" value="ウエア/パンツ,¥2,600">
+            <div class="set-title"><font size="2px">ウエア/パンツ<br><br></font>
+            <font size="5px"><center>¥2,600</center></font></div></label>
+        </td>
+            </tr>
+        <tr>
+            <td style="width: 100%;" class="note">単品</td>
+        </tr>
+        <tr id="set-4">
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-4" value="スキー板,¥2,600">
+                <div class="set-title"><font size="2px">スキー板<br></font><br>
+                <font size="5px"><center>¥2,600</center></font></div></label>
+            </td>
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-4" value="ボード板,¥2,600">
+                <div class="set-title"><font size="2px">ボード板<br></font><br>
+                <font size="5px"><center>¥2,600</center></font></div></label>
+            </td>
+        </tr>
+        <tr id="set-4-2">
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-4" value="ブーツ/スキー,¥2,600">
+                <div class="set-title"><font size="2px">ブーツ/スキー<br></font><br>
+                <font size="5px"><center>¥2,600</center></font></div></label>
+            </td>
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-4" value="ブーツ/ボード,¥2,600">
+                <div class="set-title"><font size="2px">ブーツ/ボード<br></font><br>
+                <font size="5px"><center>¥2,600</center></font></div></label>
+            </td>
+        </tr>
+        <tr id="set-4-3">
+            <td style="width: 50%;"><label class="white"><input id="select" type="radio" name="set-4" value="ストック,¥500">
+                <div class="set-title"><font size="2px">ストック<br></font><br>
+                <font size="5px"><center>¥500</center></font></div></label>
+            </td>
+            <td style="width: 50%;">
+            </td>
+        </tr>
+    </table>
+        <input name="choose-back" class="btn-sub choose-back" type="button" value="戻る" />
+        <input name="choose-Submit" class="btn-sub choose-Submit" style="float: right;" type="button" value="次へ" />
+</div>
+</div></div>
+    <!--end choose rental tab-->
+    <!--qrshow tab-->
+    <div class="qrshow-body">
+        <div class="logo"><img src="assets/image/logo.png"></div>
+        <div class="info-title">レンタル事前登録</div>
+        <div class="qrshow-container">
+            <div class="qrshow-QR">とりあえず、ユーザーが入力した情報のみが表示されます。</div><hr><br>
+            <span>割引券: </span><span class="qrdiscount"></span><br>
+            <span>名前: </span><span id="firstname"></span><span> </span><span id="lastname"></span><br>
+            <span>フリガナ: </span><span id="firstname_sei"></span><span> </span><span id="lastname_mei"></span><br>
+            <span>年齢: </span><span id="age"></span><br>
+            <span>性別: </span><span id="sex"></span><br>
+            <span>身長: </span><span id="height"></span><br>
+            <span>体重: </span><span id="weight"></span><br>
+            <span>靴のサイズ: </span><span id="size"></span><br>
+            <span>スタンス: </span><span id="stance"></span><br>
+            <span>郵便番号: </span><span id="zip_codeshow"></span><br>
+            <span>都道府県: </span><span id="address_1"></span><br>
+            <span>市区町村: </span><span id="address_2"></span><br>
+            <span>その他の住所: </span><span id="address_3"></span><br>
+            <span>番地: </span><span id="address_4"></span><br>
+            <span>電話番号: </span><span id="phonenumber"></span><br>
+            <span>利用区別: </span><span id="area--1"></span><br>
+            <span>利用日数: </span><span id="area--2"></span><br>
+            <span>セット: </span><span id="set--"></span><br>
+    
+    <div class="attention-block">
+        <div class="attention-title">
+            ご注意ください
+        </div>
+        <div class="attention-content">
+            このqrコードをもって店舗にある専用の精算機でスキャンすることで、レンタル料金の支払いと、申込用紙の発行を自動で行います。<br>
+            料金精算が行わるまでレンタルの申請は完了しておりません。
         </div>
     </div>
-
-</div>
+            
+            
+            <div class="rent-fooder">
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="1"><input name="qr-back" class="btn-sub qr-back" type="button" value="戻る" /></td>
+                        <td colspan="1"><input name="qr-Submit" class="btn-sub qr-Submit" type="button" value="Top" /></td>
+                    </tr>
+                </table>
+            
+        </div>
+    
+    </div>
     <!--end qrshow tab-->
     <!--javescript-->
     <script src="javascript/info.js"></script>
     <script src="javascript/modal.js"></script>
- <!--   <script src="javascript/QRshow.js"></script>  -->
+    <script src="javascript/choose.js"></script>
     
 </body>
 </html>

@@ -40,21 +40,7 @@ function validateForm() {
         alert("年齢を選んでしてください");
         return false;
         };
-    //chọn giới tính
-    var select = document.getElementById("select");
-    var male = document.getElementById("male");
-    var female = document.getElementById("female");
-    if ((male.checked == false) && (female.checked == false)) {
-    alert("性別選んでください");
-    return false;
-    }
-    //lấy giới tính
-    var checkbox = document.getElementsByName("sex");
-    for (var i = 0; i < checkbox.length; i++){
-        if (checkbox[i].checked == true){
-    document.getElementById("male").innerHTML = checkbox[i].value;
-        };
-    };
+
     //lấy chiều cao
     var height = document.forms["myForm"]["height"].value;
     height.innerHTML = height;
@@ -84,11 +70,8 @@ function validateForm() {
     for (var i = 0; i < stance.length; i++){
         if (stance[i].checked === true){
     document.getElementById("stance").innerHTML = stance[i].value;
-
-            console.log(stance[i].value);
         }
     }
-    
 };
 // khi ấn tiếp tục mới chạy
 var submit = document.getElementsByName("Submit")[0];
@@ -112,7 +95,7 @@ function discount (disc) {
     for (var i = 0; i < discount.length; i++){
         if (discount[i].checked === true){
             var getdiscount = discount[i].value
-            qrdiscount.innerHTML = getdiscount            
+            qrdiscount.innerHTML = getdiscount           
             return;
         }
     }  

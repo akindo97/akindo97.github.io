@@ -8,7 +8,7 @@
 input {
     border-radius: 6px;
     border-width: 1px;
-    height: 20px;
+    height: 25px;
 }
   .logo img {
     width: 50%;
@@ -29,13 +29,13 @@ input {
     text-align: center;
     font-size: 25px;
     color: #777777;
-    margin-top: 18%;
+    margin-top: 100px;
 }
 .container {
     display: inline-block;
     width: 100%;
     text-align: center;
-    margin-top: 18%;
+    margin-top: 100px;
 
 }
 .btn {
@@ -69,12 +69,15 @@ input {
 .red {
     color: red;
 }
-
+.inline {
+}
+.note {
+    padding-top: 12px;
+}
 /* radio giới tính */
 #male {
     margin:5px 0px;
     display: flex;
-    justify-content: center;
 }
 
 #male label {
@@ -111,8 +114,8 @@ input {
 /* btn */
 .btn-sub {
     margin: 20px 0px;
-    width: 90px;
-    height: 28px;
+    width: 105px;
+    height: 35px;
     border-width: 0px;
     background-color: darkgrey;
 }
@@ -121,6 +124,12 @@ input {
 }
 .Submit {
     float: right;
+}
+.rent-back {
+    float: left;
+}
+.rent-Submit {
+    float: right    ;
 }
 
 /* レンタル　tab */
@@ -183,8 +192,18 @@ input {
     top: auto;
     left: 0;
     right: 0;
-    bottom: 35px;
-    text-align: center;
+    bottom: 30px;
+    padding: 0px 20px;
+}
+/* choose tab */
+.choosebody {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
 }
 /* qrshow tab */
 .qrshow-body {
@@ -200,5 +219,15 @@ input {
     margin:5px 15px;
 }
 .qr-Submit {
+    float: right;
+}
+.attention-title {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+}
+.attention-content {
+
 }
 /* end qrshow tab */

@@ -15,7 +15,7 @@
     float:left;
     width:90px;
     margin:4px;
-    background-color:#0066FF;
+    background-color:#6699CC;
     border-radius:6px;
     border:1px solid #D0D0D0;
     overflow:auto;
@@ -35,7 +35,7 @@
 }
 
 #area-1 input:checked + span {
-    background-color:#6699CC;
+    background-color:#0066FF;
     color:#F7F7F7;
 }
 /* radio area 2 */
@@ -48,7 +48,7 @@
     float:left;
     width:90px;
     margin:4px;
-    background-color:#0066FF;
+    background-color:#6699CC;
     border-radius:6px;
     border:1px solid #D0D0D0;
     overflow:auto;
@@ -68,7 +68,7 @@
 }
 
 #area-2 input:checked + span {
-    background-color:#6699CC;
+    background-color:#0066FF;
     color:#F7F7F7;
 }
 /* radio set 1 */
@@ -117,7 +117,12 @@
 .ban-click {
     pointer-events: none;
     cursor: default;
-    opacity: 0.5;
+    
+}
+.c-click {
+    pointer-events: none;
+    cursor: default;
+    
 }
 /* radio set 2 */
 #set-2 {

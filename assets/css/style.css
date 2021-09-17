@@ -14,8 +14,8 @@ input {
     width: 50%;
   }
 .body {
-    background-image: url(https://duhocnhatbanuytin.net/images/eva/Furano.jpg);
-    background-repeat: no-repeat;
+    background-image: url(skir.jpg);
+    background-repeat: repeat-y;
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -77,14 +77,14 @@ input {
 /* radio giới tính */
 #male {
     margin:5px 0px;
-    display: flex;
+    
 }
 
 #male label {
     float:left;
     width:90px;
     margin:4px;
-    background-color:#0066FF;
+    background-color:#6699CC;
     border-radius:6px;
     border:1px solid #D0D0D0;
     overflow:auto;
@@ -104,11 +104,11 @@ input {
 }
 
 #male input:checked + span {
-    background-color:#6699CC;
+    background-color:#0066FF;
     color:#F7F7F7;
 }
 .blue {
-    background-color: #0066FF;
+    background-color: #6699CC;
     color: white;
 }
 /* btn */
@@ -164,7 +164,7 @@ input {
 
 .btn-container label {
     margin: 10px 0px;
-    background-color:#0066FF;
+    background-color:#6699CC;
     border-radius:6px;
     border:1px solid #D0D0D0;
     overflow:auto;
@@ -184,15 +184,15 @@ input {
 }
 
 .btn-container input:checked + span {
-    background-color:#6699CC;
+    background-color:#0066FF;
     color:#F7F7F7;
 }
 .rent-fooder {
-    position: absolute;
+    position: fixed;
     top: auto;
     left: 0;
     right: 0;
-    bottom: 30px;
+    bottom: 20px;
     padding: 0px 20px;
 }
 /* choose tab */
@@ -215,8 +215,23 @@ input {
     right: 0;
     bottom: 0;
 }
+.qrshow-qrcode {
+    padding: 100px;
+}
+#qrshow-qrcode {
+    text-align: -webkit-center;
+    padding-top: 20px;
+}
+.test {display: none;}
 .qrshow-container {
     margin:5px 15px;
+}
+.tatol-container {
+    height: 80px;
+}
+.discountstyle {
+    color: red;
+
 }
 .qr-Submit {
     float: right;

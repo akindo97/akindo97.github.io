@@ -13,6 +13,7 @@ var rent_back = document.getElementsByClassName("rent-back")[0];
 var rent_Submit = document.getElementsByClassName("rent-Submit")[0];
 var qrshow_body = document.getElementsByClassName("qrshow-body")[0];
 var qr_back = document.getElementsByClassName("qr-back")[0];
+var qr_Submit = document.getElementsByName("qr-Submit")[0];
 //khi click vào sẽ chuyển trang
 //trang chủ
 information.onclick = function () {
@@ -138,17 +139,12 @@ rent_Submit.onclick = function () {
                 if (getdiscount == "¥1,000引き.−¥1,000") { // hãy thay đổi khi sửa giá trị của value của vé
                     document.getElementById('set-3-2').classList.add('ban-click');
                     coupons1000()}   
-                    if (getdiscount == "¥割引券なし.−¥0") { // hãy thay đổi khi sửa giá trị của value của vé
+                    if (getdiscount == "割引券なし.−¥0") { // hãy thay đổi khi sửa giá trị của value của vé
                         couponsnashi();} 
 
         };
     };
 };
-    
-    
-    
-    
- 
 };
 };
 // trang chọn đồ thuê
@@ -212,8 +208,8 @@ choose_Submit.onclick = function () {
         if (getset_2[i].checked == true){
     document.getElementById("set--2").innerHTML = getset_2[i].value;
     var getarray = getset_2[i].value.split('.');
-    document.getElementById("setname").innerHTML = getarray[0];
-    document.getElementById("setprice").innerHTML = getarray[1];
+    document.getElementById("setname1").innerHTML = getarray[0];
+    document.getElementById("setprice1").innerHTML = getarray[1];
         };
     };
     //
@@ -250,6 +246,8 @@ choose_Submit.onclick = function () {
     setTimeout(function(){
         var price_1 = document.getElementById("setprice").innerHTML.replace(/[^0-9]/g, '');
         if (price_1 == "") {price_1 = 0};
+        var price_1_1 = document.getElementById("setprice1").innerHTML.replace(/[^0-9]/g, '');
+        if (price_1_1 == "") {price_1_1 = 0};
         var price_2 = document.getElementById("setprice-2").innerHTML.replace(/[^0-9]/g, '');
         if (price_2 == "") {price_2 = 0};
         var price_3 = document.getElementById("setprice-3").innerHTML.replace(/[^0-9]/g, '');
@@ -258,12 +256,11 @@ choose_Submit.onclick = function () {
         if (price_4 == "") {price_4 = 0};
         var discountprice = document.getElementById("discountquantity").innerHTML.replace(/[^0-9]/g, '');
         if (discountprice == "") {discountprice = 0};
-        var lastprice = parseInt(price_1) + parseInt(price_2) + parseInt(price_3) + parseInt(price_4) - parseInt(discountprice);
+        var lastprice = parseInt(price_1) + parseInt(price_1_1) + parseInt(price_2) + parseInt(price_3) + parseInt(price_4) - parseInt(discountprice);
         document.getElementById("tatol").innerHTML = lastprice.toLocaleString("en");
-    }, 1000);
+    }, 500);
     // qr code
-    
-setTimeout(function(){
+    setTimeout(function(){
     var discount = document.getElementsByName("discount");
     for (var i = 0; i < discount.length; i++){
         var qrdiscount = document.getElementById("qrdiscount");
@@ -302,9 +299,14 @@ setTimeout(function(){
 // trang QR
 qr_back.onclick = function () {
     qrshow_body.style.display = "none";
-    body.style.display = "block";
+    choose_body.style.display = "block";
+    deleteattributeqrpage()
+    deleteattribute() // ""
 };
-
+qr_Submit.onclick = function () {
+    qrshow_body.style.display = "none";
+    body.style.display = "block";
+}
 
 
 // hàm thêm QR khi từu trang chủ vào
@@ -323,7 +325,8 @@ function updataQR() {
       var coparray4 = dataarray[22].split(".");
       var coparray5 = dataarray[23].split(".");
       var waribiki = dataarray[16].split(".");
-      console.log(waribiki)
+      console.log(dataarray[19])
+      console.log(dataarray[20])
       $("#setname").html(coparray1[0]);
       $("#setprice").html(coparray1[1]);
       $("#setname1").html(coparray2[0]);
@@ -376,7 +379,7 @@ if (dataarray[9] == "レギュラー") {
 }
 if (dataarray[9] == "グーフィー") {
     $('input:radio[name=stance][value=グーフィー]').attr('checked', true);
-} if (dataarray[9] == ">未選択") {
+} if (dataarray[9] == "未選択") {
     $('input:radio[name=stance][value=未選択]').attr('checked', true);
 }
       $('#if010').val(dataarray[10])
@@ -478,3 +481,24 @@ function saveinfo() {
           });
     }, 1000);
 };
+// hàm xóa vé khi quay lại
+function deleteattribute() {
+    $('#set--').html('');
+    $('#set--2').html('');
+    $('#set--3').html('');
+    $('#set--4').html('');
+}
+function deleteattributeqrpage() {
+    $('#setname').html('');
+    $('#setprice').html('');
+    $('#setname1').html('');
+    $('#setprice1').html('');
+    $('#setname-2').html('');
+    $('#setprice-2').html('');
+    $('#setname-3').html('');
+    $('#setprice-3').html('');
+    $('#setname-4').html('');
+    $('#setprice-4').html('');
+    $('#setname-4-3').html('');
+    $('#setprice-4-3').html('');
+}

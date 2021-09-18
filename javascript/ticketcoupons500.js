@@ -88,7 +88,7 @@ function coupons500 () {
         };
         };
         var set_4_3 = document.getElementsByName("set-4");
-        document.getElementById("C__11").onclick = function () {
+        document.getElementById("set-4-3").onclick = function () {
         for (var i = 0; i < set_4_3.length; i++) {
             if (set_4_3[i].checked === true && getdiscount == "¥500引き.−¥500") {
                 $('input:radio[name=set-1]').prop('checked', false);

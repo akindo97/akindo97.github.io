@@ -3,7 +3,6 @@ function validateForm() {
     // đặt giá trị cho từng biến
     //firsname
     var firstname = document.forms["myForm"]["firstname"].value;
-    firstname.innerHTML = firstname;
     document.getElementById("firstname").innerHTML = firstname;
     if (firstname == "") {
     alert("名を入力してください");
@@ -65,19 +64,13 @@ function validateForm() {
     alert("靴のサイズを入力してください");
     return false;
     };
-    // lấy スタンス
-    var stance = document.getElementsByName("stance");
-    for (var i = 0; i < stance.length; i++){
-        if (stance[i].checked === true){
-    document.getElementById("stance").innerHTML = stance[i].value;
-        }
-    }
+    
 };
 // khi ấn tiếp tục mới chạy
-var submit = document.getElementsByName("Submit")[0];
-submit.onclick = function () {
-    validateForm()
-}
+// var submit = document.getElementsByName("Submit")[0];
+// submit.onclick = function () {
+//     validateForm()
+// }
 //chọn tuổi
 var age = document.forms["myForm"]["age"];
     var agehtml = ``
@@ -88,16 +81,21 @@ var age = document.forms["myForm"]["age"];
 
 
 // trang cho thuê ////////////////////////////////////////////
-    // lấy phiếu giảm giá
-var qrdiscount = document.getElementsByClassName("qrdiscount")[0];
-function discount (disc) {
-    var discount = document.getElementsByName("discount");
-    for (var i = 0; i < discount.length; i++){
-        if (discount[i].checked === true){
-            var getdiscount = discount[i].value
-            qrdiscount.innerHTML = getdiscount           
-            return;
-        }
-    }  
-    
-};
+    // lấy phiếu giảm giá // không dùng được
+// function discount () {
+//     var discount = document.getElementsByName("discount");
+//     for (var i = 0; i < discount.length; i++){
+//         var qrdiscount = document.getElementById("qrdiscount");
+//         if (discount[i].checked == true){
+//         var getdiscount = discount[i].value;
+//         qrdiscount.innerHTML = getdiscount;
+//         var getarray = getdiscount.split('.');
+//         document.getElementById("discountname").innerHTML = getarray[0];
+//         document.getElementById("discountquantity").innerHTML = getarray[1];
+//         console.log(getdiscount)
+//         if (getdiscount == "シーズン券割引.0") { // hãy thay đổi khi sửa giá trị của value của vé
+//             document.getElementById('set-1').classList.add('ban-click');
+//         };               
+//         };
+//     };   
+// };

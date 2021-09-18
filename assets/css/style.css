@@ -28,7 +28,7 @@ input {
 .title {
     text-align: center;
     font-size: 25px;
-    color: #777777;
+    color: #523f3f;
     margin-top: 100px;
 }
 .container {
@@ -73,6 +73,15 @@ input {
 }
 .note {
     padding-top: 12px;
+}
+#if006 {
+    font-size: 20px;
+}
+#if007 {
+    font-size: 20px;
+}
+#if008 {
+    font-size: 20px;
 }
 /* radio giới tính */
 #male {

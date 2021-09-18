@@ -18,6 +18,8 @@ function couponsnashi () {
                 $('input:radio[name=set-3-2]').prop('checked', false);
                 $('input:radio[name=set-4]').prop('checked', false);
                 $('input:radio[name=set-4-3]').prop('checked', false);
+                console.log("hihi")
+
             };
         };
         };

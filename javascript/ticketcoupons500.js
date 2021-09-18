@@ -1,7 +1,7 @@
 function coupons500 () {
     var discount = document.getElementsByName("discount");
     for (var i = 0; i < discount.length; i++){
-        var qrdiscount = document.getElementById("qrdiscount");
+        // var qrdiscount = document.getElementById("qrdiscount");
         if (discount[i].checked == true){
         var getdiscount = discount[i].value;
         // qrdiscount.innerHTML = getdiscount;
@@ -12,7 +12,7 @@ function coupons500 () {
         var set_1 = document.getElementsByName("set-1");
         document.getElementById("set-1").onclick = function () {
         for (var i = 0; i < set_1.length; i++) {
-            if (set_1[i].checked === true && getdiscount == "¥500引き.−¥500") {
+            if (set_1[i].checked == true && getdiscount == "¥500引き.−¥500") {
                 $('input:radio[name=set-2]').prop('checked', false);
                 $('input:radio[name=set-3]').prop('checked', false);
                 $('input:radio[name=set-3-2]').prop('checked', false);

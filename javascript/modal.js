@@ -130,18 +130,24 @@ rent_Submit.onclick = function () {
         document.getElementById("discountname").innerHTML = getarray[0];
         document.getElementById("discountquantity").innerHTML = getarray[1];
         if (getdiscount == "シーズン券割引.−¥0") { // hãy thay đổi khi sửa giá trị của value của vé
-            document.getElementById('set-1').classList.add('ban-click')};
+            document.getElementById('set-1').classList.add('ban-click')
+            season()};
             if (getdiscount == "¥500引き.−¥500") { // hãy thay đổi khi sửa giá trị của value của vé
-                document.getElementById('set-3-2').classList.add('ban-click');} 
+                document.getElementById('set-3-2').classList.add('ban-click');
+                coupons500()} 
                 if (getdiscount == "¥1,000引き.−¥1,000") { // hãy thay đổi khi sửa giá trị của value của vé
-                    document.getElementById('set-3-2').classList.add('ban-click');}              
+                    document.getElementById('set-3-2').classList.add('ban-click');
+                    coupons1000()}   
+                    if (getdiscount == "¥割引券なし.−¥0") { // hãy thay đổi khi sửa giá trị của value của vé
+                        couponsnashi();} 
+
         };
     };
 };
-    season()
-    coupons500()
-    coupons1000()
-    couponsnashi();
+    
+    
+    
+    
  
 };
 };

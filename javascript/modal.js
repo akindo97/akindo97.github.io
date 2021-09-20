@@ -54,7 +54,7 @@ rent_back.onclick = function () {
     body.style.display = "block";
 };
 rent_Submit.onclick = function () {
-    if (localStorage.getItem('data') == null) {
+    if (localStorage.getItem('datainfo') == null) {
         alert("利用者情報ページに情報を完全に入力していません")
     } else {
     if (document.getElementById("500").checked == false
@@ -100,27 +100,7 @@ choose_back.onclick = function () {
     choose_body.style.display = "none";
     rent_body.style.display = "block";
     // gỡ khi ấn quay lại
-    if (document.getElementsByClassName("ban-click").length > 0) {
-        document.getElementById('set-1').classList.remove('ban-click');
-        document.getElementById('set-2').classList.remove('ban-click');
-        document.getElementById('set-3').classList.remove('ban-click');
-        document.getElementById('set-3-2').classList.remove('ban-click');
-        document.getElementById('set-4').classList.remove('ban-click');
-        document.getElementById('set-4-2').classList.remove('ban-click');
-        document.getElementById('set-4-3').classList.remove('ban-click');
-        $('#C__9').removeClass('ban-click')
-        $('#C__11').removeClass('ban-click') 
-    }
-    // gỡ checked
-    $('input:radio[name=area-1]').prop('checked', false);
-    $('input:radio[name=area-2]').prop('checked', false);
-    $('input:radio[name=set-1]').prop('checked', false);
-    $('input:radio[name=set-2]').prop('checked', false);
-    $('input:radio[name=set-3]').prop('checked', false);
-    $('input:radio[name=set-3-2]').prop('checked', false);
-    $('input:radio[name=set-4]').prop('checked', false);
-    $('input:radio[name=set-4-2]').prop('checked', false);
-    $('input:radio[name=set-4-3]').prop('checked', false);
+    unchecked();
     backupdata(); // trở về trạng thái ban đầu khi ấn quay lại
 }
 choose_Submit.onclick = function () {
@@ -248,8 +228,9 @@ choose_Submit.onclick = function () {
 qr_back.onclick = function () {
     qrshow_body.style.display = "none";
     rent_body.style.display = "block";
-    deleteattributeqrpage()
-    deleteattribute() // ""
+    deleteattributeqrpage();
+    deleteattribute(); // ""
+    unchecked();
 };
 qr_Submit.onclick = function () {
     qrshow_body.style.display = "none";
@@ -293,15 +274,15 @@ function updataQR() {
 
 // hàm updata info
 function updatainfo () {
-if (localStorage.getItem('data') == null) {
+if (localStorage.getItem('datainfo') == null) {
     $('input:radio[name=sex][value=未決定]').attr('checked', true);
     $('input:radio[name=stance][value=未選択]').attr('checked', true);
 } 
 else {
-    var dataarray = localStorage.getItem('data').split("-");
+    var dataarray = localStorage.getItem('datainfo').split("-");
 }
 
-    if (localStorage.getItem('data') == null) {
+    if (localStorage.getItem('datainfo') == null) {
 
     } else {
       $('#if000').val(dataarray[0])
@@ -344,6 +325,30 @@ if (dataarray[9] == "グーフィー") {
            //   tự động check
            
            $('input:radio[name=discount][value="割引券なし.−¥0"]').attr('checked', true);
+// hàm un checked
+function unchecked () {
+    if (document.getElementsByClassName("ban-click").length > 0) {
+        document.getElementById('set-1').classList.remove('ban-click');
+        document.getElementById('set-2').classList.remove('ban-click');
+        document.getElementById('set-3').classList.remove('ban-click');
+        document.getElementById('set-3-2').classList.remove('ban-click');
+        document.getElementById('set-4').classList.remove('ban-click');
+        document.getElementById('set-4-2').classList.remove('ban-click');
+        document.getElementById('set-4-3').classList.remove('ban-click');
+        $('#C__9').removeClass('ban-click')
+        $('#C__11').removeClass('ban-click') 
+    }
+    // gỡ checked
+    $('input:radio[name=area-1]').prop('checked', false);
+    $('input:radio[name=area-2]').prop('checked', false);
+    $('input:radio[name=set-1]').prop('checked', false);
+    $('input:radio[name=set-2]').prop('checked', false);
+    $('input:radio[name=set-3]').prop('checked', false);
+    $('input:radio[name=set-3-2]').prop('checked', false);
+    $('input:radio[name=set-4]').prop('checked', false);
+    $('input:radio[name=set-4-2]').prop('checked', false);
+    $('input:radio[name=set-4-3]').prop('checked', false);
+}
 // -------
 function backupdata () {
         // set 1
@@ -398,8 +403,7 @@ function saveinfo() {
         for (var i = 0; i < discount.length; i++){
             if (discount[i].checked == true){
             var getdiscount = discount[i].value;
-    
-            }};
+        }};
         var showqr = $("#firstname").text() + "-" + $("#lastname").text() +  "-" +
         $("#firstname_sei").text() + "-" + $("#lastname_mei").text() + "-" +
         $("#age").text() + "-" + $("#sex").text() + "-" +
@@ -416,16 +420,10 @@ function saveinfo() {
         // lưu vào và lấy từ LocalStorage
         if ( typeof(Storage) !== 'undefined') {
             // Khởi tạo LocalStorage
-            localStorage.setItem('data', showqr);
+            localStorage.setItem('datainfo', showqr);
         } else {
             alert('お使いのブラウザはQRコードの保存をサポートしていません !');
         }
-        $(function(){
-            var qrtext = localStorage.getItem('data');
-            var utf8qrtext = unescape(encodeURIComponent(qrtext));
-            $("#img-qr").html("");
-            $("#img-qr").qrcode({width:160,height:160,text:utf8qrtext}); 
-          });
     }, 200);
 };
 // hàm xóa vé khi quay lại
@@ -452,7 +450,7 @@ function deleteattributeqrpage() {
 // hàm kiểm tra người dùng đã nhập đầy đủ thong tin hay chưa
 function checkinfo () {
     setTimeout(() => {
-        var dataarray = localStorage.getItem("data").split("-");
+        var dataarray = localStorage.getItem("datainfo").split("-");
         if (dataarray[0] == "" || dataarray[1] == "" ||
             dataarray[2] == "" || dataarray[3] == "" ||
             dataarray[6] == "" ||

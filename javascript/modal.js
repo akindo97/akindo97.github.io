@@ -42,64 +42,10 @@ back.onclick = function () {
 Submit.onclick = function () {
 
     validateForm();    
-    // lấy スタンス
-    var stance = document.getElementsByName("stance");
-    for (var i = 0; i < stance.length; i++){
-        if (stance[i].checked === true){
-    document.getElementById("stance").innerHTML = stance[i].value;
-        }
-    }
-    //lấy giới tính
-    var checkbox = document.getElementsByName("sex");
-    for (var i = 0; i < checkbox.length; i++){
-        if (checkbox[i].checked == true){
-    document.getElementById("sex").innerHTML = checkbox[i].value;
-        };
-    };
-    // lấy số bưa điện
-    var zip_code = document.forms["myForm"]["zip_code"].value;
-    document.getElementById("zip_codeshow").innerHTML = zip_code;
-    if (zip_code == "") {
-    alert("郵便番号を入力してください");
-    return false;
-    };
-    // lấy địa chỉ 1
-    var address1 = document.forms["myForm"]["address1"].value;
-    document.getElementById("address_1").innerHTML = address1;
-    if (address1 == "") {
-    alert("都道府県を入力してください");
-    return false;
-    };
-    // lấy địa chỉ 2
-    var address2 = document.getElementsByClassName("address2")[0].value;
-    document.getElementById("address_2").innerHTML = address2;
-    if (address2 == "") {
-    alert("市区町村を入力してください");
-    return false;
-    };
-    // lấy địa chỉ 3
-    var address3 = document.forms["myForm"]["address3"].value;
-    document.getElementById("address_3").innerHTML = address3;
-
-    if (address3 == "") {
-    alert("その他の住所を入力してください");
-    return false;
-    };
-    // lấy địa chỉ 4
-    var address4 = document.forms["myForm"]["address4"].value;
-    document.getElementById("address_4").innerHTML = address4;
-    
-    // lấy số điện thoại
-    var phonenumber = document.forms["myForm"]["phonenumber"].value;
-    document.getElementById("phonenumber").innerHTML = phonenumber;
-    if (phonenumber == "") {
-    alert("電話番号を入力してください");
-    return false;
-    };
-    rent_body.style.display = "block";
-    infopage.style.display = "none";
     // chạy hàm lưu vào local s
     saveinfo();
+    // kiểm tra người dùng đã nhập đầy đủ thông tin hay chưa
+    checkinfo();
 };
 // trang thuê
 rent_back.onclick = function () {
@@ -117,10 +63,12 @@ rent_Submit.onclick = function () {
      && document.getElementById("nashi").checked == false ) {
         alert("ボタンを選択してください")
     }　else {
+        document.getElementById("select1").checked = true // tự động chọn người lớn
+        document.getElementById("select3").checked = true // tự động chọn 1 ngày
     choose_body.style.display = "block";
     rent_body.style.display = "none";
     body.style.display = "none";
-    //lấy vé giảm giá và thêm thuộc tính ẩn khi vé có giá trị bằng シーズン券割引.0
+    //lấy vé giảm giá và thêm thuộc tính ẩn
     var discount = document.getElementsByName("discount");
     for (var i = 0; i < discount.length; i++){
         var qrdiscount = document.getElementById("qrdiscount");
@@ -299,7 +247,7 @@ choose_Submit.onclick = function () {
 // trang QR
 qr_back.onclick = function () {
     qrshow_body.style.display = "none";
-    choose_body.style.display = "block";
+    rent_body.style.display = "block";
     deleteattributeqrpage()
     deleteattribute() // ""
 };
@@ -394,8 +342,7 @@ if (dataarray[9] == "グーフィー") {
 }
 
            //   tự động check
-           $('input:radio[name=area-1][value="大人"]').attr('checked', true);
-           $('input:radio[name=area-2][value="１日"]').attr('checked', true);
+           
            $('input:radio[name=discount][value="割引券なし.−¥0"]').attr('checked', true);
 // -------
 function backupdata () {
@@ -479,7 +426,7 @@ function saveinfo() {
             $("#img-qr").html("");
             $("#img-qr").qrcode({width:160,height:160,text:utf8qrtext}); 
           });
-    }, 1000);
+    }, 200);
 };
 // hàm xóa vé khi quay lại
 function deleteattribute() {
@@ -502,3 +449,21 @@ function deleteattributeqrpage() {
     $('#setname-4-3').html('');
     $('#setprice-4-3').html('');
 }
+// hàm kiểm tra người dùng đã nhập đầy đủ thong tin hay chưa
+function checkinfo () {
+    setTimeout(() => {
+        var dataarray = localStorage.getItem("data").split("-");
+        if (dataarray[0] == "" || dataarray[1] == "" ||
+            dataarray[2] == "" || dataarray[3] == "" ||
+            dataarray[6] == "" ||
+            dataarray[8] == "" || dataarray[10] == "" ||
+            dataarray[11] == "" || dataarray[12] == "" ||
+            dataarray[13] == "" || dataarray[15] == "") {
+            alert("必要な情報を入力する必要です。（赤）")
+        } else {          
+            rent_body.style.display = "block";
+            infopage.style.display = "none";
+        }
+    }, 300);
+    
+};

@@ -26,7 +26,7 @@ function couponsnashi () {
         for (var i = 0; i < set_2.length; i++) {
             if (set_2[i].checked === true && getdiscount == "割引券なし.−¥0") {
                 $('input:radio[name=set-1]').prop('checked', false);
-                $('input:radio[name=set-3]').prop('checked', false);
+                $('input:radio[name=set-3][value="ウェア上下セット.¥4,200"]').prop('checked', false);
                 $('input:radio[name=set-4]').prop('checked', false);
                 $('input:radio[name=set-4-3]').prop('checked', false);
             };
@@ -47,7 +47,7 @@ function couponsnashi () {
         for (var i = 0; i < set_3_2.length; i++) {
             if (set_3_2[i].checked === true && getdiscount == "割引券なし.−¥0") {
                 $('input:radio[name=set-1]').prop('checked', false);
-                $('input:radio[name=set-3][value="ウエア上.¥4,200"]').prop('checked', false);
+                $('input:radio[name=set-3][value="ウェア上下セット.¥4,200"]').prop('checked', false);
             };
         };
         };

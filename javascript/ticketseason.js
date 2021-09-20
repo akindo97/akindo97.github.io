@@ -1,13 +1,13 @@
 function season () {
 var discount = document.getElementsByName("discount");
 for (var i = 0; i < discount.length; i++){
-    var qrdiscount = document.getElementById("qrdiscount");
+    // var qrdiscount = document.getElementById("qrdiscount");
     if (discount[i].checked == true){
     var getdiscount = discount[i].value;
-    qrdiscount.innerHTML = getdiscount;
-    var getarray = getdiscount.split('.');
-    document.getElementById("discountname").innerHTML = getarray[0];
-    document.getElementById("discountquantity").innerHTML = getarray[1];               
+    // qrdiscount.innerHTML = getdiscount;
+    // var getarray = getdiscount.split('.');
+    // document.getElementById("discountname").innerHTML = getarray[0];
+    // document.getElementById("discountquantity").innerHTML = getarray[1];               
     };
     var set_2 = document.getElementsByName("set-2");
     document.getElementById("set-2").onclick = function () {

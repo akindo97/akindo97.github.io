@@ -63,6 +63,15 @@ rent_Submit.onclick = function () {
      && document.getElementById("nashi").checked == false ) {
         alert("ボタンを選択してください")
     }　else {
+        var dataarray = localStorage.getItem("datainfo").split("-");
+        if (dataarray[0] == "" || dataarray[1] == "" ||
+            dataarray[2] == "" || dataarray[3] == "" ||
+            dataarray[6] == "" ||
+            dataarray[8] == "" || dataarray[10] == "" ||
+            dataarray[11] == "" || dataarray[12] == "" ||
+            dataarray[13] == "" || dataarray[15] == "") {
+            alert("必要な情報を入力する必要です。（赤）")
+        } else {
         document.getElementById("select1").checked = true // tự động chọn người lớn
         document.getElementById("select3").checked = true // tự động chọn 1 ngày
     choose_body.style.display = "block";
@@ -78,7 +87,7 @@ rent_Submit.onclick = function () {
         var getarray = getdiscount.split('.');
         document.getElementById("discountname").innerHTML = getarray[0];
         document.getElementById("discountquantity").innerHTML = getarray[1];
-        if (getdiscount == "シーズン券割引.−¥0") { // hãy thay đổi khi sửa giá trị của value của vé
+        if (getdiscount == "シーズン券割引.−50%") { // hãy thay đổi khi sửa giá trị của value của vé
             document.getElementById('set-1').classList.add('ban-click')
             season()};
             if (getdiscount == "¥500引き.−¥500") { // hãy thay đổi khi sửa giá trị của value của vé
@@ -89,7 +98,7 @@ rent_Submit.onclick = function () {
                     coupons1000()}   
                     if (getdiscount == "割引券なし.−¥0") { // hãy thay đổi khi sửa giá trị của value của vé
                         couponsnashi();} 
-
+            };
         };
     };
 };
@@ -184,6 +193,10 @@ choose_Submit.onclick = function () {
         if (price_4 == "") {price_4 = 0};
         var discountprice = document.getElementById("discountquantity").innerHTML.replace(/[^0-9]/g, '');
         if (discountprice == "") {discountprice = 0};
+        if (discountprice == "50") {discountprice = (parseInt(price_1) + parseInt(price_1_1) + parseInt(price_2) + parseInt(price_3) + parseInt(price_4)) / 2
+        $('#discountquantity').html("−¥" + discountprice.toLocaleString("en"));
+        };
+        console.log(discountprice)
         var lastprice = parseInt(price_1) + parseInt(price_1_1) + parseInt(price_2) + parseInt(price_3) + parseInt(price_4) - parseInt(discountprice);
         document.getElementById("tatol").innerHTML = lastprice.toLocaleString("en");
     }, 500);

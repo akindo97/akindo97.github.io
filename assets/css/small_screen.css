@@ -1,14 +1,38 @@
-@media screen and (max-width: 320px) {
+@media screen and (max-height: 670px) {
     .title {
         margin-top: 50px;
+    }
+    .tatol-container {
+        height: 40px;
+    }
+    .qrshow-container {
+        margin: -8px 15px;
+    }
+    .attention-content {
+    font-size: 13px;
     }
     .container {
         margin-top: 50px;
     }
+    .attention-content {
+        font-size: 13px;
+    }
+    .btn-container label span {
+        padding: 10px 0px;
+    }
+    .btn-container label {
+        margin: 6px 0px;
+    }
+    .margin-top {
+        margin-top: 20px;
+    }
+    .margin-bottom {
+        margin-bottom: 20px;
+    }
     .rent-fooder {
-        position: static;
-        bottom: 10px;
-        padding: 0px 0px;
+        position: fixed;
+        bottom: 0px;
+        padding: 0px 10px;
     }
     #male label span {
         font-size: 13px;
